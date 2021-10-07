@@ -5,7 +5,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-const RecipePage = ({ data }) => (
+const RecipeIndex = ({ data }) => (
     <Layout pageInfo={{ pageName: "recipes" }}>
         <SEO title="recipes"/>
         <Link to="/"> Home </Link>
@@ -15,7 +15,9 @@ const RecipePage = ({ data }) => (
               {
                 data.allMdx.nodes.map((node) => (
                   <article key={node.id}>
-                    <h2>{node.frontmatter.title}</h2>
+                    <Link to={`/recipes/${node.slug}`}>
+                      {node.frontmatter.title}
+                    </Link>
                     <p>Posted: {node.frontmatter.date}</p>
                   </article>
                 ))
@@ -24,7 +26,7 @@ const RecipePage = ({ data }) => (
     </Layout>
 )
 
-export const RecipeQuery = graphql`
+export const RecipeIndexQuery = graphql`
   query {
     allMdx {
       nodes {
@@ -35,15 +37,12 @@ export const RecipeQuery = graphql`
           prepTime
           cookTime
           totalTime
-          course
-          cuisine
-          servings
         }
         id
-        body
+        slug
       }
     }
   }
 `
 
-export default RecipePage;
+export default RecipeIndex;
