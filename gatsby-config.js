@@ -1,36 +1,36 @@
 module.exports = {
+  pathPrefix: "/family-recipes",
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "family-recipes",
+    title: `Haubbay - ហូបបាយ`,
+    description: `a collection of family recipes.`,
+    author: `Rodney Coyer`,
   },
   plugins: [
-    "gatsby-plugin-sass",
-    "gatsby-plugin-image",
-    "gatsby-plugin-react-helmet",
+    `gatsby-plugin-react-helmet`,
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        icon: "src/images/icon.png",
+        name: `recipes`,
+        path: `${__dirname}/recipes`,
       },
     },
-    "gatsby-plugin-mdx",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    `gatsby-plugin-sass`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: `Haubbay - Collection of Family Recipes`,
+        short_name: `family-recipes`,
+        start_url: `/`,
+        background_color: `#20232a`,
+        theme_color: `#20232a`,
+        display: `minimal-ui`,
+        icon: `src/images/gatsby-icon.png`
       },
-      __key: "images",
     },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "pages",
-        path: "./src/pages/",
-      },
-      __key: "pages",
-    },
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    // `gatsby-plugin-offline`,
   ],
-};
+}

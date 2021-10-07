@@ -1,12 +1,16 @@
-import React from "react";
-import Layout from "../components/LayoutComponent";
+import React from "react"
+import { Row, Col, Container, ListGroup } from "react-bootstrap"
 
-const IndexPage = () => {
-  return(
-    <Layout pageTitle="Home Page">
-      <p>This is the start to some of our family recipes and secrets</p>
-    </Layout>
-  );
-}
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
-export default IndexPage;
+const IndexPage = () => (
+  <Layout pageInfo={{ pageName: "index" }}>
+    <SEO title="Home" keywords={[`gatsby`, `react`, `bootstrap`]} />
+      <Container>
+        <h1> welcome to our website </h1>
+      </Container>
+  </Layout>
+)
+
+export default IndexPage

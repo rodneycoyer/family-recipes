@@ -1,15 +1,18 @@
-import React from "react";
-import Layout from "../components/LayoutComponent";
+import React from "react"
+import { Link } from "gatsby"
 
-const AboutPage = () => {
-    return (
-        <Layout pageTitle="About Our Family">
-            <p>
-                We love to cook and drink. Bring our recipes home 
-                and see what we're always looking forward to eating.
-            </p>
-        </Layout>
-    );
-}
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
+const AboutPage = () => (
+  <Layout pageInfo={{ pageName: "about" }}>
+    <SEO title="about" />
+    <Link to="/"> Home </Link>
+    <h1> About Us </h1>
+    <p>
+      We're always around drinking and cooking great food!
+    </p>
+  </Layout>
+)
 
 export default AboutPage;
