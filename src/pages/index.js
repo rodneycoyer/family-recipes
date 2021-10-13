@@ -5,11 +5,12 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
-  <Layout pageInfo={{ pageName: "index" }}>
+  <Layout pageInfo={{ pageName: "home" }}>
     <SEO title="Home" keywords={[`gatsby`, `react`, `bootstrap`]} />
-      <Container>
-        <h1> welcome to our website </h1>
-      </Container>
+      <main>
+        <h1> Welcome to our Family Cook Book </h1>
+        <p> inside you'll find recipes from our older generation as well as our new generation of cooks. </p>
+      </main>
   </Layout>
 )
 

@@ -13,6 +13,18 @@ a.link-no-style {
   }
 }
 
+.jumbotron-home {
+    margin-top: 0px;
+    padding: 200px;
+    background-image: url(../images/ang-sac-goh.png);
+    border: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 0%;
+
+}
+
 .footer-col {
   display: flex;
   flex-direction: column;
