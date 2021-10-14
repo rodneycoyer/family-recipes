@@ -1,8 +1,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { Card, CardGroup, CardImg, Col, Row, Image, Container } from "react-bootstrap";
+import { Card, CardGroup, Col, Row } from "react-bootstrap";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";

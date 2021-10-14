@@ -5,3 +5,14 @@
   top: 0;
   z-index: 100;
 }
+
+.footer-icon {
+  a:link {
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: rgb(255, 38, 0);
+    border-radius: 5px;
+  }
+}

@@ -13,7 +13,12 @@ const IndexPage = () => (
             <h1> Welcome to our Family Cook Book </h1>
             <p> inside you'll find recipes from our older generation as well as our new generation of cooks. </p>
             <Button href="/recipes"> Recipes Page </Button> {' '}
-            <Button href="/recipes" variant="danger"> Upload a Recipe </Button>
+            <Button
+              href="mailto:rodney.coyer@gmail.com"
+              variant="success"
+            >
+              Submit a Recipe
+            </Button>
           </Col>
         </Row>
       </Container>
