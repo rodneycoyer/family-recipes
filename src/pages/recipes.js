@@ -2,7 +2,7 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { Card, CardGroup, CardImg, Col, Row, Image } from "react-bootstrap";
+import { Card, CardGroup, CardImg, Col, Row, Image, Container } from "react-bootstrap";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -15,32 +15,31 @@ const RecipeIndex = ({ data }) => {
       <Link to="/"> Home </Link>
       <h1> Recipes </h1>
       <p> Click on one of our Family Recipes and taste the amazing flavors from home. </p>
-          <Row className="justify-content-center">
-            <CardGroup>
+          <Row className="justify-content-start">
               {
                 data.allMdx.nodes.map((node) => (
-                  <main key={node.id}>
-                      <Col className="mb-3" sm={6} lg={4}>
-                        <Card className="recipe-card">
-                          <Link to={`/recipes/${node.slug}`}>
-                            <GatsbyImage
-                              objectFit="cover"
-                              image={getImage(node.frontmatter.hero_image)}
-                              alt={node.frontmatter.hero_image_alt}
-                            />
-                          </Link>
-                          <Card.Body>
-                            <Card.Title className="text-center"> {node.frontmatter.title} </Card.Title>
-                            <Card.Text className="text-center mb-1"><strong>{node.frontmatter.totalTime}</strong> </Card.Text>
-                            <Card.Text className="text-center mb-0">created by: {node.frontmatter.author}  </Card.Text>
-                            <Card.Text className="text-center">updated: {node.frontmatter.date}  </Card.Text>
-                          </Card.Body>
-                        </Card>
-                      </Col>
-                  </main>
+                  <Col key={node.id} className="mb-3" xs={12} md={6} lg={4}>
+                    <CardGroup >
+                      <Card className="recipe-card">
+                        <Link to={`/recipes/${node.slug}`}>
+                          <GatsbyImage
+                            id="image"
+                            objectFit="cover"
+                            image={getImage(node.frontmatter.hero_image)}
+                            alt={node.frontmatter.hero_image_alt}
+                          />
+                        </Link>
+                        <Card.Body>
+                          <Card.Title> <h1>{node.frontmatter.title}</h1> </Card.Title>
+                          <Card.Text className="mb-0"><strong>{node.frontmatter.totalTime}</strong> </Card.Text>
+                          <Card.Text className="mb-0"> <h5>updated: {node.frontmatter.date}</h5> </Card.Text>
+                          <Card.Text className="mb-0"> <h5>created by: {node.frontmatter.author}</h5> </Card.Text>
+                        </Card.Body>
+                      </Card>
+                    </CardGroup>
+                  </Col>
                 ))
               }
-            </CardGroup>
           </Row>
     </Layout>
   );
@@ -58,8 +57,8 @@ export const RecipeIndexQuery = graphql`
           hero_image {
               childImageSharp {
                   gatsbyImageData(
-                    width: 550
-                    height: 500
+                    width: 800
+                    height: 800
                     blurredOptions: {width: 100}
                     transformOptions: {cropFocus: CENTER}
                     placeholder: BLURRED

@@ -2,14 +2,15 @@ import React from "react";
 import { Link } from "gatsby";
 
 import { Navbar, Nav } from "react-bootstrap"
+import { IconContext } from "react-icons";
 
 const CustomNavbar = ({ pageInfo }) => {
   console.log(pageInfo)
   return (
     <React.Fragment>
-      <Navbar variant="dark" expand="lg" id="site-navbar">
+      <Navbar variant="dark" expand="md" id="site-navbar">
         <Link to="/" className="link-no-style">
-          <Navbar.Brand as="span"> Home </Navbar.Brand>
+          <Navbar.Brand as="span"> Home  </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
