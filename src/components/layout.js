@@ -1,10 +1,11 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 
-import { Container, Row, Col, Jumbotron } from "react-bootstrap"
+import { RiGatsbyFill, RiReactjsFill } from "react-icons/ri"
+import { GrGraphQl } from "react-icons/gr"
 
+import { Container, Row, Col, Jumbotron } from "react-bootstrap"
 import Navbar from "./navBar"
-import { StaticImage } from "gatsby-plugin-image"
 
 const Layout = ({ children, pageInfo }) => (
   <StaticQuery
@@ -32,9 +33,16 @@ const Layout = ({ children, pageInfo }) => (
             <Col className="footer-col">
               <footer>
                 <span>
-                  © {new Date().getFullYear()}, Built using
-                  {` `}
-                  <a href="https://www.gatsbyjs.org">Gatsby</a>
+                  <RiGatsbyFill />
+                  <a href="https://www.gatsbyjs.org" style={{ color: "white" }}> Gatsby.js </a>
+                  {' '}
+                  <RiReactjsFill />
+                  <a href="https://www.reactjs.org" style={{ color: "white" }}> React.js </a>
+                  {" "}
+                  <GrGraphQl />
+                  <a href="https://www.reactjs.org" style={{ color: "white" }}> GraphQl </a>
+                  <br />
+                  © rodney coyer {new Date().getFullYear()}
                 </span>
               </footer>
             </Col>

@@ -30,9 +30,10 @@ const RecipeIndex = ({ data }) => {
                             />
                           </Link>
                           <Card.Body>
-                            <Card.Title> {node.frontmatter.title} </Card.Title>
-                            <Card.Subtitle> {node.frontmatter.date} </Card.Subtitle>
-                            <Card.Text> total: {node.frontmatter.totalTime} </Card.Text>
+                            <Card.Title className="text-center"> {node.frontmatter.title} </Card.Title>
+                            <Card.Text className="text-center mb-1"><strong>{node.frontmatter.totalTime}</strong> </Card.Text>
+                            <Card.Text className="text-center mb-0">created by: {node.frontmatter.author}  </Card.Text>
+                            <Card.Text className="text-center">updated: {node.frontmatter.date}  </Card.Text>
                           </Card.Body>
                         </Card>
                       </Col>

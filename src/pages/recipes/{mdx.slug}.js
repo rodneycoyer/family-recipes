@@ -13,6 +13,7 @@ const RecipePost = ({ data }) => {
             <h1> {data.mdx.frontmatter.title} </h1>
             <p>posted: {data.mdx.frontmatter.date} author: {data.mdx.frontmatter.author} </p>
             <GatsbyImage
+                className="mb-3"
                 image={image}
                 alt={data.mdx.frontmatter.hero_image_alt}
             />
