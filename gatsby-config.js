@@ -8,6 +8,19 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-source-mongodb`,
+      options: {
+        dbName: `cloud`,
+        collection: `recipes`,
+        connectionString: `mongodb+srv://role_user:hwveClr35sQr6R7j@sandbox.vl2sq.mongodb.net/`,
+        extraParams: {
+          ssl: true,
+          authSource: `admin`,
+          retryWrites: `true`
+        },
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `recipes`,

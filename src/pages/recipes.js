@@ -4,20 +4,20 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Card, CardGroup, Col, Row } from "react-bootstrap";
 
 import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 const RecipeIndex = ({ data }) => {
 
   return (
     <Layout pageInfo={{ pageName: "recipes" }}>
-      <SEO title="recipes"/>
+      <Seo title="recipes"/>
       <Link to="/"> Home </Link>
       <h1> Recipes </h1>
       <p> Click on one of our Family Recipes and taste the amazing flavors from home. </p>
           <Row className="justify-content-start">
               {
                 data.allMdx.nodes.map((node) => (
-                  <Col key={node.id} className="mb-3" xs={12} md={6} lg={4}>
+                  <Col key={node.id} className="mb-3" xs={6} md={6} lg={3}>
                     <CardGroup >
                       <Card className="recipe-card">
                         <Link to={`/recipes/${node.slug}`}>
@@ -30,9 +30,8 @@ const RecipeIndex = ({ data }) => {
                         </Link>
                         <Card.Body>
                           <Card.Title> <h1>{node.frontmatter.title}</h1> </Card.Title>
+                          <Card.Text className="mb-2"> <h5>created by: {node.frontmatter.author}</h5> </Card.Text>
                           <Card.Text className="mb-0"><strong>{node.frontmatter.totalTime}</strong> </Card.Text>
-                          <Card.Text className="mb-0"> <h5>updated: {node.frontmatter.date}</h5> </Card.Text>
-                          <Card.Text className="mb-0"> <h5>created by: {node.frontmatter.author}</h5> </Card.Text>
                         </Card.Body>
                       </Card>
                     </CardGroup>

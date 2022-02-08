@@ -2,11 +2,11 @@ import React from "react"
 import { Row, Col, Container, Button } from "react-bootstrap"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 const IndexPage = () => (
   <Layout pageInfo={{ pageName: "home" }}>
-    <SEO title="Home" keywords={[`gatsby`, `react`, `bootstrap`]} />
+    <Seo title="Home" keywords={[`gatsby`, `react`, `bootstrap`]} />
       <Container>
         <Row>
           <Col>
