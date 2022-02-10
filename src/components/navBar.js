@@ -16,12 +16,17 @@ const CustomNavbar = ({ pageInfo }) => {
           <Nav className="mr-auto" activeKey={pageInfo && pageInfo.pageName}>
             <Link to="/about" className="link-no-style">
               <Nav.Link as="span" eventKey="about">
-                About Us
+                About
               </Nav.Link>
             </Link>
             <Link to="/recipes" className="link-no-style">
               <Nav.Link as="span" eventKey="recipes">
                 Recipes
+              </Nav.Link>
+            </Link>
+            <Link to="/drinks" className="link-no-style">
+              <Nav.Link as="span" eventKey="drinks">
+                Drinks
               </Nav.Link>
             </Link>
           </Nav>

@@ -9,7 +9,7 @@ import Seo from "../components/seo";
 const RecipeIndex = ({ data }) => {
 
   return (
-    <Layout pageInfo={{ pageName: "recipes" }}>
+    <Layout pageInfo={{pageName: "recipes"}}>
       <Seo title="recipes"/>
       <Link to="/"> Home </Link>
       <h1> Recipes </h1>

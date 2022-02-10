@@ -1,26 +1,32 @@
+// Gatsby built-in .env support
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   pathPrefix: "/family-recipes",
   siteMetadata: {
-    title: `Haubbay - ហូបបាយ`,
-    description: `a collection of family recipes.`,
+    title: `Food and Drinks with Gatsby`,
+    description: `Full stack with Gatsby, Node, and MongoDB.`,
     author: `Rodney Coyer`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
+    { // connect mongoDB atlas
       resolve: `gatsby-source-mongodb`,
       options: {
         dbName: `cloud`,
-        collection: `recipes`,
-        connectionString: `mongodb+srv://role_user:hwveClr35sQr6R7j@sandbox.vl2sq.mongodb.net/`,
+        collection: [`recipes`, `drinks`], // add multiple collections
+        connectionString: `${process.env.GATSBY_MONGO_ATLAS}`,
         extraParams: {
+          replicaSet: `Sandbox-shard-0`,
           ssl: true,
           authSource: `admin`,
           retryWrites: `true`
         },
       }
     },
-    {
+    { // recipe pages from mdx
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `recipes`,

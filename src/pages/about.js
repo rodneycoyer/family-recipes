@@ -13,7 +13,7 @@ const AboutPage = () => (
 
     <p> I was listening to some Software Daily Podcasts that featured Netfliy engineers and thought it would be pretty cool to build something Jamstack. The philosophies and core concepts behind it's architecture make it easy to see why it's so popular build with. </p>
 
-    <p> This is a static recipe index built using MERN stack. The idea is to use Gatsby and its built in features, GraphQL, configured plugins, and reduce everything to a single API. This gives the developer the ability to call multiple data sources using a single query. I wrote my REST API on a Node/Express server and called data from local MDX files and a remote MongoDB Atlas database using queries built with GraphiQL IDE. </p>
+    <p> This is a static recipe index built using Gatsby. The idea is to use Gatsby and its built in features, GraphQL, and configured plugins. This project uses a Node/Express server and calls data from local MDX files and a remote MongoDB Atlas database. Combinations of data are queried through REST APIs & GraphQL that was be used to programmatically create recipe indexes and pages. </p>
 
     <p> After I got this project off the ground, I wanted to build and deploy on a few Cloud Service Providers. Hosting on Netlify and Gatsby Cloud took minimal effort as they both provide similar hosting and scaling services. </p>
 
@@ -83,8 +83,6 @@ Some of the future updates I would like to make include:
 * like recipes
 * comment on recipes
 
-
-   
   </Layout>
 )
 
