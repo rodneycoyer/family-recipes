@@ -7,7 +7,7 @@ module.exports = {
   pathPrefix: "/family-recipes",
   siteMetadata: {
     title: `Food and Drinks with Gatsby`,
-    description: `Full stack with Gatsby, Node, and MongoDB.`,
+    description: `Full stack with GatsbyJS, NodeJS, and MongoDB.`,
     author: `Rodney Coyer`,
   },
   plugins: [
@@ -38,11 +38,12 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-mdx`,
+    `gatsby-plugin-nodejs`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Haubbay - Collection of Family Recipes`,
-        short_name: `family-recipes`,
+        name: `Food and Drinks with Gatsby`,
+        short_name: `food and drinks`,
         start_url: `/`,
         background_color: `#20232a`,
         theme_color: `#20232a`,

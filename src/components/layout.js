@@ -1,11 +1,9 @@
-import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-
-import { RiGatsbyFill, RiReactjsFill } from "react-icons/ri"
-import { GrGraphQl } from "react-icons/gr"
-
-import { Container, Row, Col, Jumbotron } from "react-bootstrap"
-import Navbar from "./navBar"
+import React from "react";
+import { StaticQuery, graphql } from "gatsby";
+import { RiGatsbyFill, RiReactjsFill } from "react-icons/ri";
+import { GrGraphQl } from "react-icons/gr";
+import { Container, Row, Col, Jumbotron } from "react-bootstrap";
+import Navbar from "./navBar";
 
 const Layout = ({ children, pageInfo }) => (
   <StaticQuery
@@ -34,13 +32,13 @@ const Layout = ({ children, pageInfo }) => (
               <footer>
                 <span className="footer-icon">
                   <RiGatsbyFill />
-                  <a href="https://www.gatsbyjs.org" > Gatsby.js </a>
+                    <a href="https://www.gatsbyjs.org" > Gatsby.js </a>
                   <RiReactjsFill />
-                  <a href="https://www.reactjs.org" > React.js </a>
+                    <a href="https://www.reactjs.org" > React.js </a>
                   <GrGraphQl />
-                  <a href="https://www.reactjs.org" > GraphQl </a>
+                    <a href="https://www.reactjs.org" > GraphQl </a>
                   <br />
-                  © rodney coyer {new Date().getFullYear()}
+                    © rodney coyer {new Date().getFullYear()}
                 </span>
               </footer>
             </Col>
